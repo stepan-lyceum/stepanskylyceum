@@ -1,0 +1,150 @@
+/* Загальні налаштування */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+    background-color: #f4f6f9;
+    scroll-behavior: smooth; /* Плавно прокручує сторінку */
+}
+
+/* Хедер та банер */
+header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.banner-placeholder {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    padding: 25px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-style: italic;
+    color: #e2e8f0;
+}
+
+h1 {
+    margin: 10px 0 20px 0;
+    font-size: 2.4em;
+    letter-spacing: 0.5px;
+}
+
+/* Навігаційне меню */
+nav {
+    background-color: #111827;
+    padding: 8px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.nav-link {
+    color: #d1d5db;
+    margin: 0 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: #2563eb;
+}
+
+/* Активна кнопка меню */
+.nav-link.active {
+    color: white;
+    background-color: #3b82f6;
+}
+
+/* Основний контент */
+main {
+    flex: 1;
+    padding: 30px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.content-section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Гарне привітання */
+.welcome-section {
+    background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+    border-left: 6px solid #3b82f6;
+}
+
+.welcome-section h2 {
+    color: #1e3a8a;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+.welcome-section p {
+    font-size: 1.15em;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+/* Підвал */
+footer {
+    background-color: #1f2937;
+    color: #9ca3af;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    border-top: 3px solid #3b82f6;
+}
+.feedback-form-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  background-color: #0056b3;
+}

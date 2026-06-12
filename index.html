@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Степенський академічний ліцей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="banner-placeholder">
+            [Місце для вашого банера ліцею (рекомендований розмір: 1200x200px)]
+        </div>
+
+        <h1>Степенський академічний ліцей</h1>
+        
+        <nav>
+            <a href="#home" class="nav-link active">Головна</a>
+            <a href="#news" class="nav-link">Новини</a>
+            <a href="#about" class="nav-link">Про ліцей</a>
+            <a href="#contacts" class="nav-link">Контактні</a>
+            <a href="#links" class="nav-link">Корисні посилання</a>
+            <a href="#announcements" class="nav-link">Оголошення</a>
+            <a href="#feedback" class="nav-link">Зворотній зв'язок</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="content-section welcome-section">
+            <h2>Вітає вас Степенський академічний ліцей!</h2>
+            <p>Ми раді вітати вас на нашому офіційному веб-сайті. Наш ліцей — це сучасний освітній простір, де кожен учень може розкрити свій потенціал, отримати якісні знання та знайти надійних друзів. Разом ми будуємо майбутнє!</p>
+        </section>
+
+        <section id="news" class="content-section"><h2>Новини</h2><p>Останні події та новини нашого ліцею.</p></section>
+        <section id="about" class="content-section"><h2>Про ліцей</h2><p>Інформація про історію, цінності та адміністрацію.</p></section>
+        <section id="contacts" class="content-section"><h2>Контактні дані</h2><p>Адреса, телефони та електронна пошта.</p></section>
+        <section id="links" class="content-section"><h2>Корисні посилання</h2><p>Електронні щоденники, освітні платформи та ресурси.</p></section>
+        <section id="announcements" class="content-section"><h2>Оголошення</h2><p>Важливі оголошення для учнів та батьків.</p></section>
+        <section id="documenty" class="content-section"><h2>Документи</h2><p>Важливі документи.</p></section>
+        <section id="feedback" class="content-section"><h2>Зворотній зв'язок</h2><p>Форма для зв'язку з нами.</p></section>
+        <section id="documenty" class="content-section"><h2>Документи</h2><p>Важливі документи.</p></section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Степенський академічний ліцей. Всі права захищені.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <div class="feedback-form-container">
+  <h2>Зворотній зв'язок</h2>
+ <!-- Замініть ВАШ_ID на той код, який ви отримаєте на Formspree.io -->
+<form action="https://formspree.io/f/xnjyggya" method="POST">
+    
+    <!-- Приховане поле: тема листа, яку ви побачите у себе в пошті -->
+    <input type="hidden" name="_subject" value="Нове повідомлення з сайту ліцею">
+
+    <div class="form-group">
+      <label for="name">Ваше ім'я:</label>
+      <input type="text" id="name" name="name" required placeholder="Іван Іванов">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Ваш Email для відповіді:</label>
+      <input type="email" id="email" name="email" required placeholder="example@mail.com">
+    </div>
+
+    <div class="form-group">
+      <label for="message">Повідомлення:</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Текст вашого звернення..."></textarea>
+    </div>
+
+    <!-- Сторінка, на яку перейде користувач після відправки (опціонально) -->
+    <!-- <input type="hidden" name="_next" value="https://ваша-адреса.com/thanks.html"> -->
+
+    <button type="submit">Надіслати</button>
+   
+</form>
+</div>
+</body>
+</html>
