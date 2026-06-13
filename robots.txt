@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stepan-lyceum.github.io/stepanskylyceum/sitemap.xml
