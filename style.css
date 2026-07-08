@@ -1,3 +1,15 @@
+:root {
+    --bg-color: #f1f5f9;
+    --sidebar-bg: #0f172a;
+    --sidebar-text: #94a3b8;
+    --sidebar-hover: #1e293b;
+    --sidebar-active-text: #38bdf8;
+    --card-bg: #ffffff;
+    --text-color: #1e293b;
+    --primary-color: #2563eb;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,96 +17,155 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8fafc;
-    color: #1e293b;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
-.layout-container {
+.site-wrapper {
     display: flex;
     min-height: 100vh;
 }
 
-/* Бічне меню */
+/* Сайдбар */
 .sidebar {
-    width: 260px;
-    background-color: #0f172a;
+    width: 280px;
+    background-color: var(--sidebar-bg);
     color: #fff;
-    padding: 20px 0;
     position: fixed;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+}
+
+.sidebar-brand {
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-brand h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--sidebar-active-text);
+    letter-spacing: -0.025em;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    gap: 4px;
     overflow-y: auto;
 }
 
-.sidebar-header {
-    padding: 0 20px 20px 20px;
-    border-bottom: 1px solid #1e293b;
-}
-
-.sidebar-header h2 {
-    font-size: 1.2rem;
-    color: #38bdf8;
-}
-
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    padding-top: 15px;
-}
-
-.sidebar-nav .nav-link {
-    padding: 12px 20px;
-    color: #94a3b8;
+.sidebar-menu .menu-item {
+    padding: 12px 24px;
+    color: var(--sidebar-text);
     text-decoration: none;
-    transition: all 0.2s ease;
     font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
 }
 
-.sidebar-nav .nav-link:hover, 
-.sidebar-nav .nav-link.active {
+.sidebar-menu .menu-item:hover {
     color: #fff;
-    background-color: #1e293b;
-    border-left: 4px solid #38bdf8;
+    background-color: var(--sidebar-hover);
+    padding-left: 28px;
 }
 
-/* Основний вміст */
-.main-content-wrapper {
-    margin-left: 260px;
+.sidebar-menu .menu-item.active {
+    color: #fff;
+    background-color: var(--sidebar-hover);
+    border-left-color: var(--sidebar-active-text);
+}
+
+/* Контентна частина */
+.content-container {
+    margin-left: 280px;
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
-.top-banner {
-    background: #1e293b;
+.main-header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
     color: white;
-    padding: 25px;
+    padding: 40px 30px;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-main {
-    padding: 30px;
+.main-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.main-body {
+    padding: 40px;
     flex: 1;
+    max-width: 1100px;
+    width: 100%;
 }
 
-/* Логіка приховування/показу секцій через JS */
-.content-section {
-    display: none;
-    background: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.content-card {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
-.content-section.active-section {
-    display: block;
+.content-card h2 {
+    color: #0f172a;
+    margin-bottom: 16px;
+    font-size: 1.5rem;
 }
 
-footer {
+.main-footer {
     text-align: center;
-    padding: 20px;
+    padding: 24px;
     background: #e2e8f0;
     font-size: 0.85rem;
     color: #64748b;
+    border-top: 1px solid #cbd5e1;
+}
+
+/* Стилі для форм та картинок у майбутніх сторінках */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
 }
