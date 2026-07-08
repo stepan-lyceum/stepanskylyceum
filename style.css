@@ -1,150 +1,100 @@
-/* Загальні налаштування */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.layout-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Бічне меню */
+.sidebar {
+    width: 260px;
+    background-color: #0f172a;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.sidebar-header h2 {
+    font-size: 1.2rem;
+    color: #38bdf8;
+}
+
+.sidebar-nav {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    color: #333;
-    background-color: #f4f6f9;
-    scroll-behavior: smooth; /* Плавно прокручує сторінку */
+    padding-top: 15px;
 }
 
-/* Хедер та банер */
-header {
-    background-color: #1e3a8a;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.banner-placeholder {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px dashed rgba(255, 255, 255, 0.4);
-    padding: 25px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    font-style: italic;
-    color: #e2e8f0;
-}
-
-h1 {
-    margin: 10px 0 20px 0;
-    font-size: 2.4em;
-    letter-spacing: 0.5px;
-}
-
-/* Навігаційне меню */
-nav {
-    background-color: #111827;
-    padding: 8px;
-    border-radius: 8px;
-    display: inline-block;
-}
-
-.nav-link {
-    color: #d1d5db;
-    margin: 0 8px;
-    padding: 8px 16px;
+.sidebar-nav .nav-link {
+    padding: 12px 20px;
+    color: #94a3b8;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95em;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    display: inline-block;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
 }
 
-.nav-link:hover {
-    color: white;
-    background-color: #2563eb;
+.sidebar-nav .nav-link:hover, 
+.sidebar-nav .nav-link.active {
+    color: #fff;
+    background-color: #1e293b;
+    border-left: 4px solid #38bdf8;
 }
 
-/* Активна кнопка меню */
-.nav-link.active {
-    color: white;
-    background-color: #3b82f6;
-}
-
-/* Основний контент */
-main {
+/* Основний вміст */
+.main-content-wrapper {
+    margin-left: 260px;
     flex: 1;
-    padding: 30px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
-.content-section {
-    background-color: white;
+.top-banner {
+    background: #1e293b;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+main {
     padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    flex: 1;
 }
 
-/* Гарне привітання */
-.welcome-section {
-    background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
-    border-left: 6px solid #3b82f6;
+/* Логіка приховування/показу секцій через JS */
+.content-section {
+    display: none;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.welcome-section h2 {
-    color: #1e3a8a;
-    font-size: 2em;
-    margin-top: 0;
+.content-section.active-section {
+    display: block;
 }
 
-.welcome-section p {
-    font-size: 1.15em;
-    line-height: 1.6;
-    color: #4b5563;
-}
-
-/* Підвал */
 footer {
-    background-color: #1f2937;
-    color: #9ca3af;
     text-align: center;
     padding: 20px;
-    font-size: 0.9em;
-    border-top: 3px solid #3b82f6;
-}
-.feedback-form-container {
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-}
-.form-group {
-  margin-bottom: 15px;
-}
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-.form-group input, .form-group textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-}
-button:hover {
-  background-color: #0056b3;
+    background: #e2e8f0;
+    font-size: 0.85rem;
+    color: #64748b;
 }
