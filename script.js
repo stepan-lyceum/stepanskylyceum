@@ -1,15 +1,24 @@
-// Очікуємо повного завантаження сторінки
-document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.querySelectorAll(".nav-link");
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.sidebar-nav .nav-link');
+    const sections = document.querySelectorAll('.content-section');
 
-    // Функція для підсвічування активної кнопки при кліку
-    navLinks.forEach(link => {
-        link.addEventListener("click", function() {
-            // Видаляємо клас active у всіх кнопок
-            navLinks.forEach(item => item.classList.remove("active"));
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
             
-            // Додаємо клас active тій кнопці, на яку клікнули
-            this.classList.add("active");
+            // Знімаємо активний клас у всіх посилань та секцій
+            links.forEach(l => l.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active-section'));
+
+            // Додаємо активний клас натиснутому посиланню
+            link.classList.add('active');
+
+            // Знаходимо цільову секцію та показуємо її
+            const targetId = link.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.add('active-section');
+            }
         });
     });
 });
